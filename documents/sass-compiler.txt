@@ -1,0 +1,35 @@
+there are two compiler we can use to parse the SCSS to CSS.
+libsass
+ruby installer
+right now we are using ruby installer but libsass is much faster than ruby installer. 
+
+=================
+
+how to install ruby installer ?
+If you don’t already have Ruby installed (Ruby comes prepackaged with Mac OS but not with Windows), download the installer for Windows
+After opening the downloaded .exe file and accepting the license you’ll see three checkboxes – be sure to select “Add Ruby executables to your PATH” – doing this will save some pain later (but then again it might not…)
+Check if ruby is installed, open up a command prompt (click start and type “cmd” in the search box) and type:
+1
+ruby -v
+If you get an error along the lines of “Ruby is not a recognised command” then you may need to edit the PATH variable. To do this:
+
+Right click on Computer and select Properties > Advanced System Settings > Environment Variables
+Take a look in the path variable, if you don’t see Ruby in there add c:\Ruby192 (or whatever the path to your Ruby install/version). Open up your command prompt and try again.
+If you see the installed version number of Ruby, all went well and you can…
+
+refrence : http://lawrencenaman.com/blog/sass-compass-windows/
+
+=================
+
+how to check ruby is installed or not ?
+on command prompt, run ruby -v command, if you recieve the version of ruby it means ruby is installed correct, otherwise not.
+
+=================
+
+how to compile sass using ruby ?
+for this we need to install sass compiler. there is a gem command for installing compiler.
+gem install sass.
+There is no need to install compass.
+
+======================= 
+

@@ -1,0 +1,23 @@
+Sass extends the CSS @import rule so it can import SCSS/Sass files. Normally we use this rule to import our Sass into one master file. We include this master file as our main CSS file in a project to use all of the consolidated rules. Importing a file gives access to any mixins or variables included in the files.
+
+Sass by default looks for other Sass files in the current directory and then in the Sass file directory under Rails. You can also specify additional directories using the load paths option. If you are using Compass you can specify the directory by changing the sass_dir value in config.rb.
+
+@import looks for a Sass file to import.
+If the extension of the file is .scss or .sass the file will be imported. If there is no extension Sass will try and find a file that matches the name and the proper extension. For example:
+@import "sample.scss"; 
+@import "sample";
+Both of these @import statements are valid and will import the sample.scss file. The second import would also import sample.sass if it existed.
+
+We can also import multiple files in one @import statement by including the files in a comma separated list.
+
+@import "sample1", "sample2", "sample3";
+Care must be taken when importing files, as they must be imported in a correct order. For example, lets say we have a file called myVariables that includes the variables in our project. If we have another file called myStyles that uses these variables, the myVariables file must be imported first.
+
+@import "myStyles";
+@import "myVariables";
+If we import in this order we will get an error as myStyles will try and use variables that have not yet been defined.
+
+@import "myVariables";
+@import "myStyles";
+This is the correct way to import as the variables referenced in the myStyles file have already been imported.
+
